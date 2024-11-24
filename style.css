@@ -1,20 +1,22 @@
-*{
+/* General Reset and Base Styling */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Poppins', sans-serif;
 }
 
-body{
-    background-color: rgb(89, 90, 106);
-    color:white;
+body {
+    background: linear-gradient(to right, #556270, #4ECDC4);
+    color: white;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.container{
+/* Container Styling */
+.container {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -23,36 +25,71 @@ body{
     border-radius: 5px;
     width: 50%;
     max-width: 600px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
 }
 
-h1{
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Heading Styling */
+h1 {
     font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
-.user-container{
+/* User Input Section */
+.user-container {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    justify-content: start;
 }
 
-.user-input-container{
+.user-input-container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-#user-input{
+#user-input {
     width: 80%;
     padding: 0.4rem;
     border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
 }
 
-#search-btn{
+#user-input:focus {
+    outline: 2px solid #299f5d;
+    background-color: #f5f5f5;
+}
+
+#search-btn {
     padding: 0.4rem;
     border-radius: 5px;
+    border: none;
+    background-color: #299f5d;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.circle{
+#search-btn:hover {
+    background-color: #257e4a;
+}
+
+/* Progress Circle */
+.circle {
     width: 120px;
     height: 120px;
     border-radius: 50%;
@@ -61,18 +98,22 @@ h1{
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1 rem;
+    font-size: 1rem;
     color: white;
     font-weight: 700;
     background: conic-gradient(#299f5d var(--progress-degree, 0%), #283a2e 0%);
     flex-direction: column;
-}
-.circle span{
-    position: relative;
-    z-index: 2;
+    transition: background 0.4s ease-in-out;
 }
 
-.progress{
+.circle span {
+    position: relative;
+    z-index: 2;
+    font-size: 1.2rem;
+}
+
+/* Progress Section */
+.progress {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -80,7 +121,8 @@ h1{
     gap: 10px;
 }
 
-.stats-cards{
+/* Stats Cards */
+.stats-cards {
     margin-top: 2rem;
     margin-bottom: 2rem;
     display: flex;
@@ -89,11 +131,7 @@ h1{
     justify-content: space-evenly;
 }
 
-h4{
-    font-size: 1rem;
-}
-
-.card{
+.card {
     background-color: rgb(230, 146, 44);
     width: 40%;
     max-width: 290px;
@@ -101,4 +139,26 @@ h4{
     border-radius: 10px;
     font-size: 1rem;
     min-height: 4rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #fff;
+}
+
+/* Hidden Class for Stats Container */
+.hidden {
+    display: none;
 }
