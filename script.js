@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
             searchButton.disabled = true;
 
             const proxyUrl = "https://api.allorigins.win/raw?url=https://leetcode.com/graphql/";
+            //api settimgs link to get
            // const targetUrl = "";
             const graphqlQuery = `
                 query userSessionProgress($username: String!) {
